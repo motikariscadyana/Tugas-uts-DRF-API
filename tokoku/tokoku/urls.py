@@ -1,12 +1,11 @@
 from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from baju.views import CategoryViewSet, ProductViewSet, OrderViewSet
+from rest_framework import routers
+from baju.views import CategoryViewSet, ProductViewSet
 
-router = DefaultRouter()
-router.register(r'categories', CategoryViewSet)
-router.register(r'products', ProductViewSet)
-router.register(r'orders', OrderViewSet)
+router = routers.DefaultRouter()
+router.register('categories', CategoryViewSet)
+router.register('products', ProductViewSet)
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('api', include(router.urls)),
 ]
