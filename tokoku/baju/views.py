@@ -1,11 +1,15 @@
 from rest_framework import viewsets
-from baju.models import Category, Product
-from baju.serializers import CategorySerializer, ProductSerializer
+from .models import Kategori, Merek, Pakaian
+from .serializers import KategoriSerializer, MerekSerializer, PakaianSerializer
 
-class CategoryViewSet(viewsets.ModelViewSet):
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializer
+class KategoriViewSet(viewsets.ModelViewSet):
+    queryset = Kategori.objects.all()
+    serializer_class = KategoriSerializer
 
-class ProductViewSet(viewsets.ModelViewSet):
-    queryset = Product.objects.all()
-    serializer_class = ProductSerializer
+class MerekViewSet(viewsets.ModelViewSet):
+    queryset = Merek.objects.all()
+    serializer_class = MerekSerializer
+
+class PakaianViewSet(viewsets.ModelViewSet):
+    queryset = Pakaian.objects.all()
+    serializer_class = PakaianSerializer
