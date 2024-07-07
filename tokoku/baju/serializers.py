@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Kategori, Merek, Pakaian
+from .models import Kategori, Merek, Pakaian, Pembeli
 
 class KategoriSerializer(serializers.ModelSerializer):
     class Meta:
@@ -20,3 +20,8 @@ class PakaianSerializer(serializers.ModelSerializer):
     merek = MerekSerializer(read_only=True)
     kategori_id = serializers.PrimaryKeyRelatedField(queryset=Kategori.objects.all(), source='kategori', write_only=True)
     merek_id = serializers.PrimaryKeyRelatedField(queryset=Merek.objects.all(), source='merek', write_only=True)
+
+class PembeliSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Pembeli
+        fields = ['id', 'nama', 'email', 'alamat']
