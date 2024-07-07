@@ -13,3 +13,4 @@ class MerekViewSet(viewsets.ModelViewSet):
 class PakaianViewSet(viewsets.ModelViewSet):
     queryset = Pakaian.objects.all()
     serializer_class = PakaianSerializer
+
