@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .models import Kategori, Merek, Pakaian
-from .serializers import KategoriSerializer, MerekSerializer, PakaianSerializer
+from .models import Kategori, Merek, Pakaian, Pembeli
+from .serializers import KategoriSerializer, MerekSerializer, PakaianSerializer, PembeliSerializer
 
 class KategoriViewSet(viewsets.ModelViewSet):
     queryset = Kategori.objects.all()
@@ -13,4 +13,9 @@ class MerekViewSet(viewsets.ModelViewSet):
 class PakaianViewSet(viewsets.ModelViewSet):
     queryset = Pakaian.objects.all()
     serializer_class = PakaianSerializer
+
+class PembeliViewSet(viewsets.ModelViewSet):
+    queryset = Pembeli.objects.all()
+    serializer_class = PembeliSerializer
+
 
